@@ -1,0 +1,15 @@
+{
+  "extends": ["tslint:recommended"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "rules": {
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-empty-interface": false,
+    "max-classes-per-file": false
+  }
+}

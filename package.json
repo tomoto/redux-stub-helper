@@ -1,0 +1,49 @@
+{
+  "name": "redux-action-method-ts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Helper library to automatically map methods to Redux actions",
+  "author": "Tomoto Shimizu Washio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomoto/redux-action-method-ts.git"
+  },
+  "tags": [
+    "redux",
+    "typescript",
+    "ts",
+    "action",
+    "reducer"
+  ],
+  "keywords": [
+    "redux",
+    "typescript",
+    "ts",
+    "action",
+    "reducer"
+  ],
+  "bugs": {
+    "url": "https://github.com/tomoto/redux-action-method-ts/issues"
+  },
+  "homepage": "https://github.com/tomoto/redux-action-method-ts#readme",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "build": "tsc",
+    "prepublish": "npm run test && npm run build",
+    "pretest": "npm run lint",
+    "test": "jasmine-ts tests/**/*.spec.ts"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.1",
+    "tslint": "^5.11.0",
+    "@types/jasmine": "^2.8.8",
+    "jasmine": "^3.1.0",
+    "jasmine-ts": "^0.2.1"
+  },
+  "dependencies": {
+    "redux": "^4.0.0"
+  }
+}
