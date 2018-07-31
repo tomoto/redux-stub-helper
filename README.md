@@ -1,2 +1,2 @@
-# redux-stub-helper
-Helper library to stub the Redux actions and reducers
+# redux-action-method-ts
+Helper library to automatically map TypeScript methods to Redux actions.
