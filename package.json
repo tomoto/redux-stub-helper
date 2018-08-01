@@ -1,7 +1,6 @@
 {
   "name": "redux-action-method-ts",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "description": "Helper library to automatically map methods to Redux actions",
   "author": "Tomoto Shimizu Washio",
   "license": "MIT",
