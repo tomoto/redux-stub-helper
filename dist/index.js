@@ -9,13 +9,13 @@ function createActionCreator() {
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i] = arguments[_i];
                 }
-                return {
+                return ({
                     type: {
                         origin: data.origin,
                         methodName: prop,
                     },
                     payload: args,
-                };
+                });
             };
         },
     });

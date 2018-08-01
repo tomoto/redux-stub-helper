@@ -37,16 +37,14 @@ export function createActionCreator<AC>() {
   const data: { origin?: AC } = {};
 
   const actionCreator = new Proxy(data, {
-    get: (target: any, prop: string) => {
-      return (...args: any[]): IInvokeMethodAction<AC> => {
-        return {
-          type: {
-            origin: data.origin as AC,
-            methodName: prop,
-          },
-          payload: args,
-        };
-      };
+    get(target: any, prop: string) {
+      return (...args: any[]): IInvokeMethodAction<AC> => ({
+        type: {
+          origin: data.origin as AC,
+          methodName: prop,
+        },
+        payload: args,
+      });
     },
   }) as AC;
 
