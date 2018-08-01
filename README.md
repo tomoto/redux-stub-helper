@@ -53,6 +53,7 @@ const reducers = createReducer<State>(new ActionHandler(), actions, { counter: 0
 // Now actions and reducers are ready to use.
 const store = createStore(reducers);
 store.dispatch(actions.increment());
+store.dispatch(actions.add(5));
 ...
 ```
 
