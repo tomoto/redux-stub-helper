@@ -1,12 +1,12 @@
 import {Action} from "redux";
 import {createActionCreator, createReducer} from "../src";
 
-// Define your state.
+// Define your state
 export interface IMyState {
   counter: number;
 }
 
-// Short name for your state just for convenience.
+// Short name for your state just for convenience
 type S = IMyState;
 
 // Define your actions as an interface with generic return type
@@ -19,7 +19,7 @@ export interface IMyActions<R> {
 // Alias to the action creator type which returns Redux actions
 export type IMyActionCreator = IMyActions<Action>;
 
-// Alias to the action handler type which returns a closure to take an old state and return the new state
+// Alias to the action handler type which returns a function to take an old state and return the new state
 export type IMyActionHandler = IMyActions<(s: S) => S>;
 
 // Implement the action handler
