@@ -30,7 +30,7 @@ interface IInvokeMethodActionType<AC> {
 
 interface IInvokeMethodAction<AC> extends Redux.Action<IInvokeMethodActionType<AC>> {
   type: IInvokeMethodActionType<AC>;
-  payload: any[];
+  args: any[];
 }
 
 export function createActionCreator<AC>() {
@@ -43,7 +43,7 @@ export function createActionCreator<AC>() {
           origin: data.origin as AC,
           methodName: prop,
         },
-        payload: args,
+        args,
       });
     },
   }) as AC;
@@ -57,5 +57,5 @@ export function createReducer<S, AS = any, AH extends AS = AS, AC extends AS = A
     actionHandler: AH, actionOrigin: AC, initialState: S): Redux.Reducer<S, Redux.Action> {
   return (s: S = initialState, a: Redux.Action): S =>
     (a.type.origin === actionOrigin && actionHandler[a.type.methodName]) ?
-      actionHandler[a.type.methodName].apply(actionHandler, (a as IInvokeMethodAction<AC>).payload)(s) : s;
+      actionHandler[a.type.methodName].apply(actionHandler, (a as IInvokeMethodAction<AC>).args)(s) : s;
 }

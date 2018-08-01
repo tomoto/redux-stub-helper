@@ -14,7 +14,7 @@ function createActionCreator() {
                         origin: data.origin,
                         methodName: prop,
                     },
-                    payload: args,
+                    args: args,
                 });
             };
         },
@@ -27,7 +27,7 @@ function createReducer(actionHandler, actionOrigin, initialState) {
     return function (s, a) {
         if (s === void 0) { s = initialState; }
         return (a.type.origin === actionOrigin && actionHandler[a.type.methodName]) ?
-            actionHandler[a.type.methodName].apply(actionHandler, a.payload)(s) : s;
+            actionHandler[a.type.methodName].apply(actionHandler, a.args)(s) : s;
     };
 }
 exports.createReducer = createReducer;
