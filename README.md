@@ -33,8 +33,8 @@ interface State { counter: number } // State for my counter application
 // Define actions as an interface with the return type generic
 // The return type will be specialized by action creators and action handlers respectively.
 interface Actions<R> {
-  increment(): R
-  add(x: number): R
+  increment(): R;
+  add(x: number): R;
 }
 
 // Derive an action creator from the interface above
@@ -45,8 +45,8 @@ const actions = createActionCreator<Actions<Action>>();
 // Each method returns a function that takes the old state and returns the new state
 // because the method itself does not take the state in the parameters.
 class ActionHandler implements Actions<(s:State) => State> {
-  increment() { return (s:State): State => ({...s, counter: s.counter + 1}); }
-  add(x:number) { return (s:State): State => ({...s, counter: s.counter + x}); }
+  increment() { return (s:State): State => ({...s, counter: s.counter + 1}) }
+  add(x:number) { return (s:State): State => ({...s, counter: s.counter + x}) }
 }
 
 // Create a reducer by binding the action handler and the action creator above

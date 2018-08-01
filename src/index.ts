@@ -57,7 +57,7 @@ export function createActionCreator<AC>() {
 
 export function createReducer<S, AS = any, AH extends AS = AS, AC extends AS = AS>(
     actionHandler: AH, actionOrigin: AC, initialState: S): Redux.Reducer<S, Redux.Action> {
-  return (s: S = initialState, a: IInvokeMethodAction<AC>): S =>
+  return (s: S = initialState, a: Redux.Action): S =>
     (a.type.origin === actionOrigin && actionHandler[a.type.methodName]) ?
-      actionHandler[a.type.methodName].apply(actionHandler, a.payload)(s) : s;
+      actionHandler[a.type.methodName].apply(actionHandler, (a as IInvokeMethodAction<AC>).payload)(s) : s;
 }

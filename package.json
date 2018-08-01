@@ -29,7 +29,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'tests/**/*.ts'",
     "build": "tsc",
     "prepublish": "npm run test && npm run build",
     "pretest": "npm run lint",
