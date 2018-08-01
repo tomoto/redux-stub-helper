@@ -23,7 +23,7 @@ So here is my thought that makes more sense, at least for me if not for everyone
 
 Putting those thoughs together, I would like to write my Redux actions and reducers like this pseudo code. If you liked this idea, see the [complete example](tests/example.ts) and use it in your project.
 
-```
+```typescript
 import {Action, createStore} from "redux";
 import {createActionCreator, createReducer} from "my-fancy-libary";
 
@@ -56,7 +56,7 @@ store.dispatch(actions.increment());
 ...
 ```
 
-Also note that this approach is totally compatible with the usual Redux usage. You can use it only when you like and appropriate, and should be totally safe to mix it with other approaches.
+Also note that this approach is totally compatible with the usual Redux usage. You can use it only when you like it and it is appropriate, and should be totally safe to mix it with other approaches.
 
 ## Conclusion
 
