@@ -3,7 +3,7 @@ Helper library to automatically map TypeScript methods to Redux actions.
 
 ## Usage
 
-Take [the code](src/index.ts) (only <50 lines code in one file) to your project and use it as shown in [the example](tests/example.ts). To be published on npm repository in the future.
+Take [the code](src/index.ts) (only <50 lines of code in one file) to your project and use it as shown in [the example](tests/example.ts). To be published on npm repository in the future.
 
 ## Description
 
@@ -19,17 +19,18 @@ So here is my thought that makes more sense, at least for me if not for everyone
 
 * Most of the time, an action can be equivalent to a method signature and its parameters that makes the state transition happen, if spoken in the typed language terminologies. It is exactly like a method invocation packet created by an RPC client stub, and this analogy suggests that all we need to create actions should be the interface definition but no manual implementations.
 * If we have an action containing a method signature and its parameters as discussed above, we should be able to implement a generic reducer that dispatches the action to the designated method on an _action handler_ object to make the actual state transition happen. This action handler should be bound with the reducer upfrount.
-* Let's say we had an interface that exposes the requierd actions as methods with parameters (such as `increment()` and `add(x:number)` if it was a counter application) and the return type generic. Then we should be able to use this same interface to create actions (by returning an action object) and to implement the action handler.
+* Let's say we had an interface that exposes the requierd actions as methods (such as `increment()` and `add(x:number)` if it was a counter application) with the return type generic. Then we should be able to use this same interface both to create actions (by returning an action object) and to implement the action handler.
 
 Putting those thoughs together, I would like to write my Redux actions and reducers like this pseudo code. If you liked this idea, see the [complete example](tests/example.ts) and use it in your project.
 
 ```typescript
 import {Action, createStore} from "redux";
-import {createActionCreator, createReducer} from "my-fancy-libary";
+import {createActionCreator, createReducer} from "redux-action-method-ts"; // my fancy library
 
 interface State { counter: number } // State for my counter application
 
 // Define actions as an interface with the return type generic
+// The return type will be specialized by action creators and action handlers respectively.
 interface Actions<R> {
   increment(): R
   add(x: number): R
