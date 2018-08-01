@@ -6,7 +6,7 @@ Helper library to automatically map TypeScript methods to Redux actions.
 Install by `npm install redux-action-method-ts` or directly taking [the code](src/index.ts) (only one file) to your project.
 See [the example](tests/example.ts) for the usage.
 
-## Description
+## Story
 
 There are a few things I really hate with Redux when I studied about it recently:
 
@@ -60,6 +60,10 @@ store.dispatch(actions.add(5));
 ```
 
 Also note that this approach is totally compatible with the usual Redux usage. You can use it when and only when you like it, and should be totally safe to mix it with other approaches.
+
+## Object Model
+
+![](docs/redux-action-method-ts.png)
 
 ## Conclusion
 
