@@ -3,7 +3,8 @@ Helper library to automatically map TypeScript methods to Redux actions.
 
 ## Usage
 
-Install by `npm install redux-action-method-ts` and see [the example](tests/example.ts).
+Install by `npm install redux-action-method-ts` or directly taking [the code](src/index.ts) (only one file) to your project.
+See [the example](tests/example.ts) for the usage.
 
 ## Description
 
